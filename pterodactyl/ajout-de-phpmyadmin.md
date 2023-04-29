@@ -57,7 +57,13 @@ Certbot certonly
 
 On choisit la 1ère option, puis on rentre notre domaine, par exemple: pma.domaine.fr
 
+
+
+
+
 ### Configuration NGINX
+
+(Si votre serveur web est nginx)
 
 Créer le fichier avec `nano /etc/nginx/sites-available/phpmyadmin.conf`&#x20;
 
@@ -135,7 +141,11 @@ sudo ln -s /etc/nginx/sites-available/phpmyadmin.conf /etc/nginx/sites-enabled/p
 systemctl restart nginx
 ```
 
-### Apache2
+
+
+### Configuration Apache2
+
+(Si votre serveur est apache)
 
 On créé le fichier avec `nano /etc/apache2/sites-available/phpmyadmin.com`&#x20;
 
@@ -159,6 +169,10 @@ On créé le fichier avec `nano /etc/apache2/sites-available/phpmyadmin.com`&#x2
 </strong><strong>  SSLCertificateKeyFile /etc/letsencrypt/live/<a data-footnote-ref href="#user-content-fn-7">&#x3C;domain></a>/privkey.pem
 </strong>&#x3C;/VirtualHost>
 </code></pre>
+
+
+
+
 
 ## Configurations supplémentaires
 
