@@ -12,7 +12,7 @@ description: Documentations et utilisation de pterodactyl
 
 Il est possible d'installer phpmyadmin sur le même serveur que le panel Pterodactyl.
 
-{% content-ref url="./" %}
-[.](./)
+{% content-ref url="pterodactyl/ajout-de-phpmyadmin.md" %}
+[ajout-de-phpmyadmin.md](pterodactyl/ajout-de-phpmyadmin.md)
 {% endcontent-ref %}
 
