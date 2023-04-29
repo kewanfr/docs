@@ -10,5 +10,7 @@ C'est un peu un fourre-tout, mais j'espère que ça pourra aider des gens.
 
 
 Vous ne comprenez pas quelque chose ? Vous avez une question ?
+
 Vous avez une idée d'amélioration, une suggestion ? Vous avez besoin d'aide ?
+
 Vous pouvez me contacter sur Discord : `Kéwan#9959`
