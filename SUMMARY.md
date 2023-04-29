@@ -1,5 +1,5 @@
 # Table of contents
 
-* [Pterodactyl](README.md)
+* [Installation de PhpMyAdmin](README.md)
+* [Pterodactyl](<README (1).md>)
   * [Installation](pterodactyl/installation.md)
-  * [Ajout de PhpMyAdmin](pterodactyl/ajout-de-phpmyadmin.md)
