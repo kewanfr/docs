@@ -14,11 +14,7 @@ sudo apt update
 sudo apt install -y certbot
 # Run this if you use Nginx
 sudo apt install -y python3-certbot-nginx
-# Run this if you use Apache
-sudo apt install -y python3-certbot-apache
 ```
-
-
 
 ## Installation du panel
 
@@ -43,8 +39,6 @@ cp config.sample.inc.php config/config.inc.php
 chmod o+w config/config.inc.php
 ```
 
-
-
 ## Configuration du serveur web
 
 ### Certficat SSL
@@ -57,27 +51,21 @@ Certbot certonly
 
 On choisit la 1ère option, puis on rentre notre domaine, par exemple: pma.domaine.fr
 
-
-
-
-
 ### Configuration NGINX
 
-(Si votre serveur web est nginx)
-
-Créer le fichier avec `nano /etc/nginx/sites-available/phpmyadmin.conf`&#x20;
+Créer le fichier avec `nano /etc/nginx/sites-available/phpmyadmin.conf`
 
 Remplacer \<domain> par votre nom de domaine
 
 <pre data-title="phpmyadmin.conf" data-line-numbers><code>server {
     listen 80;
-<strong>    server_name <a data-footnote-ref href="#user-content-fn-1">&#x3C;domain></a>;
+<strong>    server_name &#x3C;domain>;
 </strong>    return 301 https://$server_name$request_uri;
 }
 
 server {
     listen 443 ssl http2;
-<strong>    server_name <a data-footnote-ref href="#user-content-fn-2">&#x3C;domain></a>;
+<strong>    server_name &#x3C;domain>;
 </strong>
     root /var/www/phpmyadmin;
     index index.php;
@@ -89,7 +77,7 @@ server {
     sendfile off;
 
     # SSL Configuration
-<strong>    ssl_certificate /etc/letsencrypt/live/<a data-footnote-ref href="#user-content-fn-3">&#x3C;domain></a>/fullchain.pem;
+<strong>    ssl_certificate /etc/letsencrypt/live/&#x3C;domain>/fullchain.pem;
 </strong><strong>    ssl_certificate_key /etc/letsencrypt/live/&#x3C;domain>/privkey.pem;
 </strong>    ssl_session_cache shared:SSL:10m;
     ssl_protocols TLSv1.2 TLSv1.3;
@@ -141,39 +129,6 @@ sudo ln -s /etc/nginx/sites-available/phpmyadmin.conf /etc/nginx/sites-enabled/p
 systemctl restart nginx
 ```
 
-
-
-### Configuration Apache2
-
-(Si votre serveur est apache)
-
-On créé le fichier avec `nano /etc/apache2/sites-available/phpmyadmin.com`&#x20;
-
-<pre data-title="phpmyadmin.conf" data-line-numbers><code>&#x3C;VirtualHost *:80>
-<strong>  ServerName <a data-footnote-ref href="#user-content-fn-4">&#x3C;domain></a>
-</strong>  RewriteEngine On
-  RewriteCond %{HTTPS} !=on
-  RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
-&#x3C;/VirtualHost>
-&#x3C;VirtualHost *:443>
-<strong>  ServerName <a data-footnote-ref href="#user-content-fn-5">&#x3C;domain></a>
-</strong>  DocumentRoot "/var/www/phpmyadmin"
-  AllowEncodedSlashes On
-  php_value upload_max_filesize 100M
-  php_value post_max_size 100M
-  &#x3C;Directory "/var/www/phpmyadmin">
-    AllowOverride all
-  &#x3C;/Directory>
-  SSLEngine on
-<strong>  SSLCertificateFile /etc/letsencrypt/live/<a data-footnote-ref href="#user-content-fn-6">&#x3C;domain></a>/fullchain.pem
-</strong><strong>  SSLCertificateKeyFile /etc/letsencrypt/live/<a data-footnote-ref href="#user-content-fn-7">&#x3C;domain></a>/privkey.pem
-</strong>&#x3C;/VirtualHost>
-</code></pre>
-
-
-
-
-
 ## Configurations supplémentaires
 
 Pour que pma fonctionne correctement, il faut encore effectuer quelques commandes
@@ -189,18 +144,3 @@ rm -rf /var/www/phpmyadmin/config
 rm -rf /var/www/phpmyadmin/setup
 ```
 
-
-
-[^1]: 
-
-[^2]: 
-
-[^3]: 
-
-[^4]: 
-
-[^5]: 
-
-[^6]: 
-
-[^7]: 
