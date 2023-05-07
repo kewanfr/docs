@@ -24,7 +24,7 @@ On commence par créer le dossier, télécharger et mettre les fichiers sources 
 ```
 mkdir /var/www/phpmyadmin && mkdir /var/www/phpmyadmin/tmp/ && cd /var/www/phpmyadmin
 wget https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.tar.gz
-tar xvzf phpMyAdmin-latest-english.tar.gz
+tar xvzf phpMyAdmin-5.2.1-all-languages.tar.gz
 mv phpMyAdmin-5.2.1-all-languages/* /var/www/phpmyadmin
 ```
 
