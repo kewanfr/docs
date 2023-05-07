@@ -4,7 +4,7 @@
 
 Avoir un domaine ou sous-domaine sur lequel on souhaite mettre le panel phpmyadmin qui point vers notre machine. Créer un enregistrer A ou CNAME, par exemple: pma.domaine.fr.
 
-* Nginx ou Apache (déjà installé si vous utiliser un panel comme pterodactyl)
+* Nginx (déjà installé si vous utiliser un panel comme pterodactyl)
 * Cerbot
 
 (Installation de certbot):
@@ -12,7 +12,6 @@ Avoir un domaine ou sous-domaine sur lequel on souhaite mettre le panel phpmyadm
 ```
 sudo apt update
 sudo apt install -y certbot
-# Run this if you use Nginx
 sudo apt install -y python3-certbot-nginx
 ```
 
@@ -46,7 +45,7 @@ chmod o+w config/config.inc.php
 Il faut tout d'abord générer le certificat ssl avec certbot:
 
 ```
-Certbot certonly
+certbot certonly
 ```
 
 On choisit la 1ère option, puis on rentre notre domaine, par exemple: pma.domaine.fr
