@@ -5,3 +5,7 @@
 * [Pterodactyl](<README (1).md>)
   * [Installation](pterodactyl/installation.md)
 * [Bots Discord.js](bots-discord.js.md)
+
+## HomeLab and network
+
+* [Mise en Place et configuration VPN Wireguard](homelab-and-network/mise-en-place-et-configuration-vpn-wireguard.md)
