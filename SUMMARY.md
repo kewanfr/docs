@@ -4,6 +4,7 @@
 * [Installation de PhpMyAdmin](pterodactyl/ajout-de-phpmyadmin.md)
 * [Pterodactyl](<README (1).md>)
   * [Installation](pterodactyl/installation.md)
+* [NPM - NodeJs et PNPM - Linux](npm-nodejs-et-pnpm-linux.md)
 * [Bots Discord.js](bots-discord.js.md)
 
 ## HomeLab and network
