@@ -19,3 +19,23 @@ pnpm env use --global lts
 
 On peut à la place de lts mettre la version 16 ou 18 par exemple.
 
+## Avec NVM
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash && source ~/.bashrc
+```
+
+```
+nvm install latest
+
+# OR
+
+nvm install 18
+```
+
+
+
+
+
+
+
