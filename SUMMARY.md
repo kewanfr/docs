@@ -10,3 +10,8 @@
 ## HomeLab and network
 
 * [Mise en Place et configuration VPN Wireguard](homelab-and-network/mise-en-place-et-configuration-vpn-wireguard.md)
+
+***
+
+* [Mise en Place du SILO (NFS sécurisé)](mise-en-place-du-silo-nfs-securise.md)
+* [Podman et Podman Compose](podman-et-podman-compose.md)
