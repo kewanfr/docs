@@ -16,3 +16,7 @@
 * [Mise en Place du SILO (NFS sécurisé)](mise-en-place-du-silo-nfs-securise.md)
 * [Podman et Podman Compose](podman-et-podman-compose.md)
 * [Docker et Docker compose sur debian](docker-et-docker-compose-sur-debian.md)
+
+## VM et serveurs Virtuels
+
+* [Augmenter la taille du disque VM PVE](vm-et-serveurs-virtuels/augmenter-la-taille-du-disque-vm-pve.md)
