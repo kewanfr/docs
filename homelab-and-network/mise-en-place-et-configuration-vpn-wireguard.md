@@ -1,4 +1,4 @@
-# Mise en Place et configuration VPN Wireguard
+# Mise en Place et configuration VPN Wireguard - CLIENT
 
 Afin de permettre à mes serveurs distants d'accéder à mon réseau local, je les ai connecté à mon serveur VPN Wireguard chez moi. Voici comment modifier les paramètres et redémarrer le service.
 

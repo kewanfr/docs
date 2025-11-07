@@ -1,5 +1,19 @@
 # Mise en Place et configuration VPN Wireguard - SERVEUR / Réseau HOMELAB
 
+Inspiré du guide de it-connect.fr: [https://www.it-connect.fr/mise-en-place-de-wireguard-vpn-sur-debian-11/](https://www.it-connect.fr/mise-en-place-de-wireguard-vpn-sur-debian-11/)
+
+
+
+## 0 - Le réseau souhaité
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Je souhaiter lier mon réseau local avec mes serveurs. Mes VPS sont sur 2 sous réseaux: 150.107.201.0/24 et 46.247.109.0/24.
+
+Sur mon réseau local, le sous réseau est : 192.168.0.0/24. Celui du VPN de la box est 192.168.27.0/24.
+
+Je souhaiter donner à tous mes serveurs une IP en 10.0.0.0/24. Je souhaite que tout le VPN puisse avoir accès à la fois au 192.168.0/27.0 aux 2 sous réseau de mes VPS. Et au sous réseau 10.0/24
+
 ## 1 - Préparation du serveur
 
 ### 1.1 - Installation de wireguard
@@ -61,7 +75,7 @@ On your ajoute l'ip choisie pour le client (ou les 2 IP dans notre cas)
 ```
 [Interface]
 PrivateKey = <PRIVATE_KEY_CLIENT>
-Address = 192.168.27.100/24, 10.0.0.100/24
+Address = 10.0.0.100/24
 MTU = 1360
 
 [Peer]
