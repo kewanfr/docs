@@ -11,6 +11,7 @@
 
 * [Mise en Place et configuration VPN Wireguard - CLIENT](homelab-and-network/mise-en-place-et-configuration-vpn-wireguard.md)
 * [Mise en Place et configuration VPN Wireguard - SERVEUR / Réseau HOMELAB](homelab-and-network/mise-en-place-et-configuration-vpn-wireguard-serveur-reseau-homelab.md)
+* [Adresse IP Fixe sur Debian ou Ubuntu](homelab-and-network/adresse-ip-fixe-sur-debian-ou-ubuntu.md)
 
 ***
 
