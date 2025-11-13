@@ -33,7 +33,7 @@ et on l'ajoute au fichier `.ssh/authorized_keys` sur notre machine.
 J'installe toujours quelques outils bien pratiques:
 
 ```bash
-apt update -y && apt install -y curl sudo micro btop
+apt update -y && apt install -y curl sudo micro btop lsof
 ```
 
 Ensuite, je rajoute quelques alias dans mon bashrc:
