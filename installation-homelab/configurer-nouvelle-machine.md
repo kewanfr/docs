@@ -1,28 +1,27 @@
-# Configurer Machine
+# Configurer nouvelle machine
 
 ## 0 - Création de la machine
 
-Créer un VM avec au moins 50 Gb de Stockage. Sous Ubuntu ou Debian.
-Lui configurer une adresse IP statique (DHCP)
+Créer un VM avec au moins 50 Gb de Stockage. Sous Ubuntu ou Debian. Lui configurer une adresse IP statique (DHCP)
 
 ## 1 - Mise à jour et config SSH
 
 La première étape est de mettre à jour notre machine:
+
 ```bash
 apt update && apt full-upgrade
 ```
 
 On peut ensuite activer le ssh, en modifiant ce fichier:
+
 ```bash
 nano /etc/ssh/sshd_config
 ```
 
-
-On y décommente la ligne `PermitRootLogin prohibit-password`.
-Si on souhaite authoriser la connexion en root avec le mot de passe on change `prohibit-password` par `yes`. Sinon on passe à l'étape suivante.
-
+On y décommente la ligne `PermitRootLogin prohibit-password`. Si on souhaite authoriser la connexion en root avec le mot de passe on change `prohibit-password` par `yes`. Sinon on passe à l'étape suivante.
 
 Sur notre client, on récupère la clé ssh:
+
 ```bash
 cat .ssh/id_ed25519.pub
 ```
@@ -37,13 +36,14 @@ J'installe toujours quelques outils bien pratiques:
 apt update -y && apt install -y curl sudo micro btop
 ```
 
-
 Ensuite, je rajoute quelques alias dans mon bashrc:
+
 ```bash
 nano .bashrc
 ```
 
-```.bashrc
+{% code title=".bashrc" lineNumbers="true" %}
+```bash
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -63,3 +63,4 @@ alias status='systemctl status'
 alias restart='systemctl restart'
 alias reload='systemctl daemon-reload'
 ```
+{% endcode %}
