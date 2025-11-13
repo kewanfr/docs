@@ -1,8 +1,6 @@
-# Mise en Place et configuration VPN Wireguard - SERVEUR Linux / Réseau HOMELAB
+# Mise en Place et configuration VPN Wireguard - SERVEUR / Réseau HOMELAB
 
 Inspiré du guide de it-connect.fr: [https://www.it-connect.fr/mise-en-place-de-wireguard-vpn-sur-debian-11/](https://www.it-connect.fr/mise-en-place-de-wireguard-vpn-sur-debian-11/)
-
-
 
 ## 0 - Le réseau souhaité
 
@@ -44,7 +42,6 @@ ListenPort = 51820
 PrivateKey = <PRIVATE_KEY_SERVER>
 ```
 
-
 ## 2 - Génération du client
 
 Sur le client, ouvrir wireguard puis créer une config vide. ![](<../.gitbook/assets/Capture d’écran 2025-11-07 à 14.02.32.jpg>)
@@ -79,7 +76,7 @@ Endpoint = <SRV_IP>:51820
 
 (Avant tout modification dans la config, bien couper l'interface avec sudo wg-quick down wg0)
 
-On retourne dans la config:&#x20;
+On retourne dans la config:
 
 ```
 sudo nano /etc/wireguard/wg0.conf
@@ -102,12 +99,12 @@ AllowedIPs = 10.0.0.100/32
 ### 3.2 Sécurité et ouverture de ports
 
 #### 3.2.1 Firewall
-On active le routage avec:&#x20;
+
+On active le routage avec:
 
 ```
 sysctl -w net.ipv4.ip_forward=1
 ```
-
 
 Puis on installe ufw:
 
@@ -126,8 +123,6 @@ Ainsi que le port du VPN:
 ```
 sudo ufw allow 51820/udp
 ```
-
-
 
 Ensuite, on édite la configuration:
 
@@ -149,13 +144,38 @@ COMMIT
 
 Et on rajoute (après la section "_# ok icmp code for FORWARD_"):
 
+{% code title="ufw/before.rules" lineNumbers="true" %}
+```bash
+# autoriser le forwarding pour le réseau distant de confiance (+ le réseau du VPN)
+-A ufw-before-forward -s 192.168.0.0/24 -j ACCEPT
+-A ufw-before-forward -d 192.168.0.0/24 -j ACCEPT
+
+-A ufw-before-forward -s 192.168.27.64/27 -j ACCEPT
+-A ufw-before-forward -d 192.168.27.64/27 -j ACCEPT
+
+# Le réseau SRV de la maison
+-A ufw-before-forward -s 10.0.0.0/24 -j ACCEPT
+-A ufw-before-forward -d 10.0.0.0/24 -j ACCEPT
+
+# Les serveurs chez HostHatch
+-A ufw-before-forward -s 150.107.201.0/24 -j ACCEPT
+-A ufw-before-forward -d 150.107.201.0/24 -j ACCEPT
+
+# Les serveurs chez Datalix
+-A ufw-before-forward -s 46.247.109.0/24 -j ACCEPT
+-A ufw-before-forward -d 46.247.109.0/24 -j ACCEPT
+
+# Optionnel: Tout le trafic est autorisé
+-A ufw-before-forward -s 0.0.0.0/0 -j ACCEPT
+-A ufw-before-forward -d 0.0.0.0/0 -j ACCEPT
+```
+{% endcode %}
 
 On active et redémarre le firewall:
 
 ```
 sudo ufw enable && sudo systemctl restart ufw
 ```
-
 
 #### 3.2.2 Ouverture de ports
 
@@ -176,8 +196,6 @@ et on le lance
 ```
 sudo systemctl start wg-quick@wg0.service
 ```
-
-
 
 On peut regarder les logs avec:
 
