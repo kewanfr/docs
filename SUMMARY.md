@@ -26,7 +26,7 @@
 
 ## Installation Homelab
 
-* [Configurer une nouvelle machine](installation-homelab/configurer-nouvelle-machine.md)
+* [Configurer nouvelle machine](installation-homelab/configurer-nouvelle-machine.md)
 
 
 
