@@ -148,31 +148,6 @@ COMMIT
 ```
 
 Et on rajoute (après la section "_# ok icmp code for FORWARD_"):
-{% code title="ufw/before.rules" lineNumbers="true" %}
-```bash
-# autoriser le forwarding pour le réseau distant de confiance (+ le réseau du VPN)
--A ufw-before-forward -s 192.168.0.0/24 -j ACCEPT
--A ufw-before-forward -d 192.168.0.0/24 -j ACCEPT
-
--A ufw-before-forward -s 192.168.27.64/27 -j ACCEPT
--A ufw-before-forward -d 192.168.27.64/27 -j ACCEPT
-
-# Le réseau SRV de la maison
--A ufw-before-forward -s 10.0.0.0/24 -j ACCEPT
--A ufw-before-forward -d 10.0.0.0/24 -j ACCEPT
-
-# Les serveurs chez HostHatch
--A ufw-before-forward -s 150.107.201.0/24 -j ACCEPT
--A ufw-before-forward -d 150.107.201.0/24 -j ACCEPT
-
-# Les serveurs chez Datalix
--A ufw-before-forward -s 46.247.109.0/24 -j ACCEPT
--A ufw-before-forward -d 46.247.109.0/24 -j ACCEPT
-
-# Optionnel: Tout le trafic est autorisé
--A ufw-before-forward -s 0.0.0.0/0 -j ACCEPT
--A ufw-before-forward -d 0.0.0.0/0 -j ACCEPT
-```
 
 
 On active et redémarre le firewall:
