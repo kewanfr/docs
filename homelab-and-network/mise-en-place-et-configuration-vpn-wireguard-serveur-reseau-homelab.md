@@ -1,4 +1,4 @@
-# Mise en Place et configuration VPN Wireguard - SERVEUR / Réseau HOMELAB
+# Mise en Place et configuration VPN Wireguard - SERVEUR Linux / Réseau HOMELAB
 
 Inspiré du guide de it-connect.fr: [https://www.it-connect.fr/mise-en-place-de-wireguard-vpn-sur-debian-11/](https://www.it-connect.fr/mise-en-place-de-wireguard-vpn-sur-debian-11/)
 
@@ -12,7 +12,7 @@ Je souhaiter lier mon réseau local avec mes serveurs. Mes VPS sont sur 2 sous r
 
 Sur mon réseau local, le sous réseau est : 192.168.0.0/24. Celui du VPN de la box est 192.168.27.0/24.
 
-Je souhaiter donner à tous mes serveurs une IP en 10.0.0.0/24. Je souhaite que tout le VPN puisse avoir accès à la fois au 192.168.0/27.0 aux 2 sous réseau de mes VPS. Et au sous réseau 10.0/24
+Je souhaiter donner à tous mes serveurs une IP en 10.0.0.0/24. Je souhaite que tout le VPN puisse avoir accès à la fois au 192.168.0.0/24 (sous réseau de ma box), au sous réseau du VPN de la box: 192.168.27.64/27 et au sous réseau 10.0/24
 
 ## 1 - Préparation du serveur
 
@@ -21,8 +21,6 @@ Je souhaiter donner à tous mes serveurs une IP en 10.0.0.0/24. Je souhaite que 
 ```
 sudo apt update -y && sudo apt install -y wireguard
 ```
-
-
 
 ### 1.2 - Génération de la clé / des clés
 
@@ -40,13 +38,11 @@ Mettre ceci dans le fichier (en remplaçant la clé privée et clé publique)
 
 ```
 [Interface]
-#Address = 10.0.0.1/24
-Address = 192.168.27.101/24
+Address = 10.0.0.15/32
 SaveConfig = true
 ListenPort = 51820
 PrivateKey = <PRIVATE_KEY_SERVER>
 ```
-
 
 
 ## 2 - Génération du client
@@ -54,8 +50,6 @@ PrivateKey = <PRIVATE_KEY_SERVER>
 Sur le client, ouvrir wireguard puis créer une config vide. ![](<../.gitbook/assets/Capture d’écran 2025-11-07 à 14.02.32.jpg>)
 
 On récupère la clé publique générée par celui-ci pour l'étape 3.1
-
-
 
 La configuration doit ressembler à ça:
 
@@ -95,26 +89,24 @@ On ajoute à la fin du fichier une entrée (ou plusieurs) \[Peer]
 
 ```
 [Interface]
-#Address = 10.0.0.1/24
-Address = 192.168.27.101/24
+Address = 10.0.0.15/32
 SaveConfig = true
 ListenPort = 51820
 PrivateKey = <PRIVATE_KEY_SERVER>
 
 [Peer]
 PublicKey = PUBLIC_KEY_CLIENT1
-AllowedIPs = 192.168.27.100/32, 10.0.0.100/32
-Endpoint = 193.52.84.11:55762
+AllowedIPs = 10.0.0.100/32
 ```
 
 ### 3.2 Sécurité et ouverture de ports
 
+#### 3.2.1 Firewall
 On active le routage avec:&#x20;
 
 ```
 sysctl -w net.ipv4.ip_forward=1
 ```
-
 
 
 Puis on installe ufw:
@@ -202,6 +194,11 @@ sudo ufw enable && sudo systemctl restart ufw
 ```
 
 
+#### 3.2.2 Ouverture de ports
+
+Si la machine est derrière un NAT, il faut ouvrir le port de celui-ci.
+
+Faire pointer le port 51820 vers l'ip de notre machine
 
 ### 3.3 - Activation du service VPN
 
@@ -216,8 +213,6 @@ et on le lance
 ```
 sudo systemctl start wg-quick@wg0.service
 ```
-
-
 
 
 

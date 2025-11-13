@@ -1,4 +1,4 @@
-# Mise en Place et configuration VPN Wireguard - CLIENT
+# Mise en Place et configuration VPN Wireguard - CLIENT Linux
 
 Afin de permettre à mes serveurs distants d'accéder à mon réseau local, je les ai connecté à mon serveur VPN Wireguard chez moi. Voici comment modifier les paramètres et redémarrer le service.
 
@@ -22,16 +22,15 @@ Cela configurera votre VPN Wireguard et le service sera activé pour se lancer a
 <pre class="language-yaml"><code class="lang-yaml"><strong>/etc/wireguard/wg0.conf
 </strong>[Interface]
 PrivateKey = .....
-Address = 192.168.27._/32
+Address = 10.0.0.0/32
 #DNS = __.__.__.__
 #MTU = 1360
 
 [Peer]
 PublicKey = ......
 Endpoint = _:_
-AllowedIPs = 192.168.27._/27, 192.168.0.0/24
+AllowedIPs = 192.168.0.0/24, 10.0.0.0/24, 192.168.27.0/24, 150.107.201.0/24
 </code></pre>
-
 
 
 ## 3. Activer et tester le VPN
@@ -62,7 +61,4 @@ sudo systemctl enable wg-quick@wg0
 sudo systemctl start wg-quick@wg0
 ```
 
-
-
 Parfait, le serveur est connecté au réseau local avec wireguard !
-
