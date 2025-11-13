@@ -38,7 +38,7 @@ nano /etc/systemd/network/lan0.network
 ```
 [Match]
 Name=enp0s5
-MACAddress=66:11:7f:a0:b9:8f
+MACAddress=<ADRESSE_MAC>
 
 [Network]
 DHCP=yes

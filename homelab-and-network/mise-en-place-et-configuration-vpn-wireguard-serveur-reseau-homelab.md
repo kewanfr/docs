@@ -24,15 +24,9 @@ sudo apt update -y && sudo apt install -y wireguard
 
 
 
-### 1.2 - Génération de la clé
+### 1.2 - Génération de la clé / des clés
 
-```
-wg genkey > privatekey
-```
-
-```
- wg pubkey < privatekey > publickey
-```
+`wg genkey | tee privatekey | wg pubkey > publickey`
 
 On garde ces 2 clés pour les étapes 1.3 et 2
 
