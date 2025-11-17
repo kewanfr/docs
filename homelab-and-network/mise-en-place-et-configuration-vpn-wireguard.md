@@ -15,7 +15,7 @@ sudo apt update && sudo apt install -y wireguard
 ## 2. Configurer Wireguard
 
 1. **Créer le fichier de configuration Wireguard**\
-   Créez le fichier de configuration pour l'interface Wireguard en éditant `/etc/wireguard/wg0.conf`.
+Créez le fichier de configuration pour l'interface Wireguard en éditant `/etc/wireguard/wg0.conf`.
 
 Cela configurera votre VPN Wireguard et le service sera activé pour se lancer au démarrage du système. Assurez-vous de remplacer les champs de clé et d'adresse par vos informations spécifiques.
 
