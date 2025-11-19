@@ -16,9 +16,9 @@
 ***
 
 * [Mise en Place du SILO (NFS sécurisé)](mise-en-place-du-silo-nfs-securise.md)
+* [Connexion CLIENT au NFS](connexion-client-au-nfs.md)
 * [Podman et Podman Compose](podman-et-podman-compose.md)
 * [Docker et Docker compose sur debian](docker-et-docker-compose-sur-debian.md)
-
 
 ## Stacks Docker et Services
 
@@ -27,8 +27,6 @@
 ## Installation Homelab
 
 * [Configurer nouvelle machine](installation-homelab/configurer-nouvelle-machine.md)
-
-
 
 ## VM et serveurs Virtuels
 
