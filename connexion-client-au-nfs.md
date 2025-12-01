@@ -77,3 +77,6 @@ On recharge la configuration:
 sudo mount -a
 ```
 
+```
+systemctl daemon-reload
+```
