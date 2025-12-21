@@ -20,6 +20,11 @@
 * [Podman et Podman Compose](podman-et-podman-compose.md)
 * [Docker et Docker compose sur debian](docker-et-docker-compose-sur-debian.md)
 
+## PVE
+
+* [Sources APT PVE](pve/sources-apt-pve.md)
+* [2nd NVME partagé avec les LXC](pve/2nd-nvme-partage-avec-les-lxc.md)
+
 ## Stacks Docker et Services
 
 * [Installer Dockge](stacks-docker-et-services/installer-dockge.md)
