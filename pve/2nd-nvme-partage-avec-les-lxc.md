@@ -87,7 +87,8 @@ chmod 755 /mnt/nvme
 ### Monter les dossiers
 
 ```bash
-pct set 101 -mp0 /mnt/data/ct-101,mp=/data
+pct set 101 -mp0 /mnt/data/ct-101,mp=/data/ct
+pct set 101 -mp1 /mnt/data/shared,mp=/data/shared
 ```
 
 
