@@ -24,6 +24,7 @@
 
 * [Sources APT PVE](pve/sources-apt-pve.md)
 * [2nd NVME partagé avec les LXC](pve/2nd-nvme-partage-avec-les-lxc.md)
+* [proxmox\_lxc\_partage\_uid1000](pve/proxmox_lxc_partage_uid1000.md)
 
 ## Stacks Docker et Services
 
@@ -36,3 +37,7 @@
 ## VM et serveurs Virtuels
 
 * [Augmenter la taille du disque VM PVE](vm-et-serveurs-virtuels/augmenter-la-taille-du-disque-vm-pve.md)
+
+***
+
+* [Creer partage LXC - Permissions 1000](creer-partage-lxc-permissions-1000.md)
