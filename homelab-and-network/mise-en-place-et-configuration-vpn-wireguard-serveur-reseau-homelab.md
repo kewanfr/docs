@@ -44,7 +44,7 @@ PrivateKey = <PRIVATE_KEY_SERVER>
 
 ## 2 - Génération du client
 
-Sur le client, ouvrir wireguard puis créer une config vide. ![](<../.gitbook/assets/Capture d’écran 2025-11-07 à 14.02.32.jpg>)
+Sur le client, ouvrir wireguard puis créer une config vide. ![](<../.gitbook/assets/Capture d’écran 2025-11-07 à 14.02.32.jpg>)
 
 On récupère la clé publique générée par celui-ci pour l'étape 3.1
 

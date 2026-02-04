@@ -37,7 +37,6 @@
 ## VM et serveurs Virtuels
 
 * [Augmenter la taille du disque VM PVE](vm-et-serveurs-virtuels/augmenter-la-taille-du-disque-vm-pve.md)
-
-***
-
-* [Creer partage LXC - Permissions 1000](creer-partage-lxc-permissions-1000.md)
+* [Creer partage LXC - Permissions 1000](vm-et-serveurs-virtuels/creer-partage-lxc-permissions-1000.md)
+* [Mac and clients](vm-et-serveurs-virtuels/mac-and-clients/README.md)
+  * [Mon Terminal](vm-et-serveurs-virtuels/mac-and-clients/mon-terminal.md)
