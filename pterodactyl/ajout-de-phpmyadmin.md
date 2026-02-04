@@ -4,7 +4,7 @@
 
 Avoir un domaine ou sous-domaine sur lequel on souhaite mettre le panel phpmyadmin qui point vers notre machine. Créer un enregistrer A ou CNAME, par exemple: pma.domaine.fr.
 
-* Nginx (déjà installé si vous utiliser un panel comme pterodactyl)
+* Nginx (déjà installé si vous utilisez un panel comme pterodactyl)
 * Cerbot
 
 (Installation de certbot):
@@ -142,4 +142,3 @@ Afin d'activer la connexion avec les cookies, il faut ouvrir et éditer le fichi
 rm -rf /var/www/phpmyadmin/config
 rm -rf /var/www/phpmyadmin/setup
 ```
-

@@ -19,6 +19,7 @@
 * [Connexion CLIENT au NFS](connexion-client-au-nfs.md)
 * [Podman et Podman Compose](podman-et-podman-compose.md)
 * [Docker et Docker compose sur debian](docker-et-docker-compose-sur-debian.md)
+* [Stratégie de backups et sauvegarde](strategie-de-backups-et-sauvegarde.md)
 
 ## PVE
 
@@ -40,3 +41,7 @@
 * [Creer partage LXC - Permissions 1000](vm-et-serveurs-virtuels/creer-partage-lxc-permissions-1000.md)
 * [Mac and clients](vm-et-serveurs-virtuels/mac-and-clients/README.md)
   * [Mon Terminal](vm-et-serveurs-virtuels/mac-and-clients/mon-terminal.md)
+
+## MacBook - Windows et Clients
+
+* [MacOS - Mon Terminal](macbook-windows-et-clients/macos-mon-terminal.md)
